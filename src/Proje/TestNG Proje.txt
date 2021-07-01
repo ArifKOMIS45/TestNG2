@@ -1,0 +1,27 @@
+/*
+NOTE : 	NOT: Bu web sitesi için bir hesabınız yoksa,bir tane oluşturun
+testNG Projesi :
+•	Verilen taskları  iki farklı classta oluşturmalı ve taskları tamamladıktan sonra bu görevleri paralel olarak run etmelisiniz.
+•	Username ve password ‘ u  xml dosyasında  bir parametre olarak kullanın.
+.   Projede POM kullanılmalıdır.
+
+Task 1)
+Step 1) Siteye gidin    http://demowebshop.tricentis.com/
+Step 2) username ve password girin.
+Step 3) Sol alttaki contact us butonuna tıklayın.
+Step 4)Gerekli alanları doldurun.
+Step 5) Submit butonuna tıklayın.
+Step 6) Submite bastıktan sonra gelen mesajın gözüküp gözükmedigini kontrol edin.
+
+Task 2)
+Step 1) Siteye gidin    http://demowebshop.tricentis.com/
+Step 2) email ve password girin.
+Step 3) Apparel & Shoes ‘ a tıklayın.
+Step 4) Blue and green Sneaker ‘e tıklayın.( Green and blue olan değil, 	‘Blue and green sneaker olana tıklayın !!’ )
+Step 5) Wishliste ekleyin.
+Step 6) Ürünlerin olduğu sayfaya geri gelin. (Step 3 teki sayfaya)
+Step 7) 50’s Rockabilly Polka Dot Top JR Plus Size ürününe tıklayın ve wishlist’e  ekleyin.
+Step 8) Wishlist sayfasına gidin.
+Step 9) Eklediğimiz ürünlerin, wishlist sayfasında gözüküp gözükmediğini doğrulayın.
+
+*/

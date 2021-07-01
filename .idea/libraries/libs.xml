@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="file://C:/selenyum/Lips/selenyum/libs" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://C:/selenyum/Lips/selenyum/libs" recursive="false" />
+  </library>
+</component>

@@ -1,0 +1,19 @@
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="2" >
+    <test name="POMtest1">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="Gun07._04_PlaceOrderPOM"/>
+        </classes>
+    </test>
+    <test name="POMtest2">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="Gun07._04_PlaceOrderPOM"/>
+        </classes>
+    </test>
+</suite>
+
+
+
