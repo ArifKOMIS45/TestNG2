@@ -18,7 +18,6 @@ public class _03_PlaceOrderElements {
         PageFactory.initElements(driver,this);
 
     }
-
     @FindBy(css = "input[name='search']")
     public WebElement searchBox;
 

@@ -7,7 +7,7 @@ public class _02_Intro {
 
     @Test
     void test1() {
-        System.out.println("Intro 2 --->  test 1");
+        System.out.println("Intro 1 --->  test 1");
     }
 
 

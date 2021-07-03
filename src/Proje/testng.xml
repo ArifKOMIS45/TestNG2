@@ -1,0 +1,25 @@
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="2" >
+    <test name="POMtest1">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="email" value="arifkom@gmail.com"></parameter>
+        <parameter name="Password" value="manisa45"></parameter>
+        <classes>
+            <class name="Proje.Test.Test1"/>
+            <class name="Proje.Test.Test2"/>
+        </classes>
+    </test>
+    <test name="POMtest2">
+        <parameter name="browser" value="firefox"></parameter>
+        <parameter name="email" value="arifkom@gmail.com"></parameter>
+        <parameter name="Password" value="manisa45"></parameter>
+        <classes>
+            <class name="Proje.Test.Test1"/>
+            <class name="Proje.Test.Test2"/>
+        </classes>
+    </test>
+</suite>
+
+
+

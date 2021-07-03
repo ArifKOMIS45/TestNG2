@@ -1,6 +1,7 @@
 package Proje.Main;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,17 +14,19 @@ import org.testng.annotations.Parameters;
 import java.util.concurrent.TimeUnit;
 
 public class BaseDriver {
+    public static WebDriver driver;
+    //WebDriverWait wait=new WebDriverWait(driver,10);
 
-    protected WebDriver driver;
+
 
     @BeforeClass
-    @Parameters("browser")
-    public void BaslangicIslemleri(String browser) {
+    @Parameters({"browser","email","Password"})
+    public void BaslangicIslemleri(String browser,String email,String password) {
         if (browser.equalsIgnoreCase("chrome")) {
-            System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
-            System.setProperty("webdriver.chrome.driver", "C:/selenyum/Driver/chromedriver.exe");
-            driver = new ChromeDriver();
-        } else if (browser.equalsIgnoreCase("firefox")) {
+        System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
+        System.setProperty("webdriver.chrome.driver", "C:/selenyum/Driver/chromedriver.exe");
+        driver = new ChromeDriver();
+         } else if (browser.equalsIgnoreCase("firefox")) {
             System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
             System.setProperty("webdriver.gecko.driver", "C:/selenyum/Driver/geckodriver.exe");
             driver = new FirefoxDriver();
@@ -33,38 +36,39 @@ public class BaseDriver {
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get("http://demowebshop.tricentis.com/");
-        LoginTest(browser);
+        LoginTest(browser,email,password);
     }
-
+    public static WebDriver getDriver() {
+        return driver;
+    }
     @AfterClass
     public void BitisIslemleri() throws InterruptedException {
         Thread.sleep(10000);
         driver.quit();
     }
 
+    @Parameters({"email","Password"})
+    void LoginTest(String browser,String email,String Password) {
+        WebElement logIn = driver.findElement(By.cssSelector(".ico-login"));
+        logIn.click();
+        WebElement inputEmail = driver.findElement(By.id("Email"));
+        inputEmail.sendKeys(email);
 
-    void LoginTest(String browser) {
-        WebElement inputEmail = driver.findElement(By.id("input-email"));
-        inputEmail.sendKeys("arifkom@gmail.com");
+        WebElement password = driver.findElement(By.id("Password"));
+        password.sendKeys(Password);
 
-        WebElement password = driver.findElement(By.id("input-password"));
-        password.sendKeys("manisa45");
-
-        WebElement login = driver.findElement(By.cssSelector("input[value='Login']"));
+        WebElement login = driver.findElement(By.cssSelector(".login-button"));
         login.click();
 
-        if (browser.equalsIgnoreCase("chrome")) {
-            WebElement gelismis = driver.findElement(By.id("details-button"));
-            gelismis.click();
 
-            WebElement link = driver.findElement(By.id("proceed-link"));
-            link.click();
-        }
     }
 
+    public void Scroll() {
 
+        JavascriptExecutor jse = (JavascriptExecutor) driver; // (driver is your browser webdriver object)
+        jse.executeScript("window.scrollBy(0,document.body.scrollHeight || document.documentElement.scrollHeight)", "");
 
-
+    }
 
 
 }

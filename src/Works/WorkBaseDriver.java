@@ -10,7 +10,6 @@ import java.util.concurrent.TimeUnit;
 public class WorkBaseDriver {
     public static WebDriver driver;
 
-
     public static void StartWebSite(String Address) {
         System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
         System.setProperty("webdriver.chrome.driver", "C:/selenyum/Driver/chromedriver.exe");
